@@ -205,3 +205,46 @@ document.addEventListener('keydown', (e) => {
     togglePlayback();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const socialIcons = document.querySelector('.social-icons');
+    
+    // Toggle mobile menu when hamburger icon is clicked
+    menuToggle.addEventListener('click', function() {
+        // Toggle the 'active' class on the nav links
+        navLinks.classList.toggle('active');
+        
+        // Optional: Toggle social icons visibility in mobile menu
+        if (window.innerWidth <= 768) {
+            socialIcons.classList.toggle('active');
+        }
+        
+        // Change the menu icon between ☰ and ✕
+        this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close menu when a nav link is clicked (for mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                socialIcons.classList.remove('active');
+                menuToggle.textContent = '☰';
+            }
+        });
+    });
+    
+    // Close menu when clicking outside of it (optional)
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            !event.target.closest('.nav-links') && 
+            !event.target.closest('.menu-toggle')) {
+            navLinks.classList.remove('active');
+            socialIcons.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+    });
+});
