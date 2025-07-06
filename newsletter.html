@@ -238,11 +238,14 @@
     opacity: 1; /* Full opacity on hover */
   }
   </style>
-</head>
 <body>
-  <header>
+<head>
     <nav>
       <div class="logo">The Carter Projekt</div>
+      
+      <!-- Mobile menu toggle button -->
+      <div class="menu-toggle">☰</div>
+      
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
@@ -252,21 +255,20 @@
         <li><a href="store.html">Store</a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
       </ul>
-  <div class="social-icons">
-  <a href="https://www.instagram.com/thecarterprojekt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-    <img src="Weixin_instagram.jpg" alt="Instagram">
-  </a>
-  <a href="https://youtube.com/@gbanjah?si=Wu2LMWluWvomSDci">
-    <img src="Weixin_youtube.jpg" alt="YouTube">
-  </a>
-  <a href="https://www.facebook.com/carterprojekt">
-    <img src="Weixin_facebook.jpg" alt="Facebook">
-  </a>
-  </div>
+      
+      <div class="social-icons">
+        <a href="https://www.instagram.com/thecarterprojekt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+          <img src="Weixin_instagram.jpg" alt="Instagram">
+        </a>
+        <a href="https://youtube.com/@gbanjah?si=Wu2LMWluWvomSDci">
+          <img src="Weixin_youtube.jpg" alt="YouTube">
+        </a>
+        <a href="https://www.facebook.com/carterprojekt">
+          <img src="Weixin_facebook.jpg" alt="Facebook">
+        </a>
+      </div>
     </nav>
-</head>
-<body>
-  <header>
+  </head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#000000"> <!-- Android address bar color -->
@@ -294,6 +296,7 @@
    <footer>
     <p>&copy; 2025 The Carter Projekt. All rights reserved.</p>
   </footer>
+  <script src="script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const nav = document.querySelector("nav");
