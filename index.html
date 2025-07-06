@@ -357,12 +357,6 @@
         nav.style.background = window.scrollY > 50 ? "#000" : "rgba(0,0,0,0.85)";
       });
     });
-   // Detect mobile devices and use a poster image fallback
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  bgVideo.poster = 'fallback-image.jpg';
-  bgVideo.style.display = 'none'; // Hide the video
-  document.querySelector('.hero').style.backgroundImage = 'url(fallback-image.jpg)';
-}
   </script>
 </body>
 </html>
