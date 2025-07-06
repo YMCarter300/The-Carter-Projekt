@@ -305,41 +305,6 @@
   </footer>
   <script src="script.js"></script>
   <script>
-   document.addEventListener('DOMContentLoaded', function() {
-  const bgVideo = document.getElementById('bg-video');
-  
-  // Try to autoplay (will work if muted)
-  const playPromise = bgVideo.play();
-  
-  if (playPromise !== undefined) {
-    playPromise.catch(error => {
-      // Autoplay prevented - show fallback or play button
-      console.log("Autoplay prevented, showing fallback");
-      bgVideo.controls = false; // Hide controls
-      
-      // Optional: Show a play button overlay for mobile
-      const playOverlay = document.createElement('div');
-      playOverlay.innerHTML = '▶ Tap to Play Background';
-      playOverlay.style.cssText = `
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 10;
-      `;
-      playOverlay.addEventListener('click', function() {
-        bgVideo.play();
-        this.remove();
-      });
-      document.querySelector('.hero').appendChild(playOverlay);
-    });
-  }
-});
     document.addEventListener("DOMContentLoaded", () => {
       const nav = document.querySelector("nav");
       window.addEventListener("scroll", () => {
