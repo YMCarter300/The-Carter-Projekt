@@ -1,0 +1,432 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f90;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #f90;
+}
+
+.nav-links li a.active {
+  color: #f90;
+  font-weight: bold;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  object-fit: contain;
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ===== HERO SECTIONS ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-text {
+  z-index: 10;
+  padding: 0 2rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  background-color: #f90;
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: all 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ffa726;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,153,0,0.3);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #f90;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* ===== MUSIC SECTION ===== */
+.music-embed {
+  margin: 2rem 0;
+  max-width: 800px;
+}
+
+.spotify-embed {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== TOUR DATES ===== */
+.tour-dates {
+  list-style: none;
+  max-width: 800px;
+}
+
+.tour-dates li {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.tour-dates li:hover {
+  transform: translateX(10px);
+}
+
+.tour-dates a {
+  color: #f90;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* ===== GALLERIES ===== */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.03);
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-gallery iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== STORE ===== */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.merch-item {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.merch-item:hover {
+  transform: translateY(-10px);
+}
+
+.merch-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.merch-item h3 {
+  margin: 0.5rem 0;
+}
+
+.merch-item p {
+  color: #f90;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ===== NEWSLETTER ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+form input[type="email"] {
+  padding: 0.8rem 1rem;
+  flex: 1;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+form button {
+  padding: 0.8rem 2rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #777;
+  margin-top: 3rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* ===== MOBILE-FIRST BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on Android */
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  text-size-adjust: 100%; /* Prevent font scaling on rotation */
+}
+
+
+
+/* Hamburger Menu */
+.menu-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+/* ===== TOUCH-FRIENDLY BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 1rem 1.8rem; /* Larger tap target */
+  min-width: 120px;
+  font-size: 1rem;
+}
+
+/* ===== MOBILE HERO SECTION ===== */
+.hero {
+  height: 70vh; /* Shorter on mobile */
+  padding-top: 60px; /* Account for fixed nav */
+}
+
+.hero-text h1 {
+  font-size: 2rem; /* Smaller heading */
+  padding: 0 1rem;
+}
+
+/* ===== MOBILE GALLERIES ===== */
+.photo-gallery, .video-gallery {
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.photo-gallery img {
+  height: 200px; /* Smaller images */
+}
+
+/* ===== TOUCH-FRIENDLY FORMS ===== */
+form input[type="email"] {
+  width: 100%; /* Full-width inputs */
+  font-size: 16px; /* Prevent zoom on focus */
+}
+
+/* ===== ANDROID-SPECIFIC FIXES ===== */
+@media (hover: none) {
+  /* Disable hover effects on touch devices */
+  .btn:hover, .nav-links li a:hover, .social-icons a:hover img {
+    transform: none !important;
+  }
+  
+  /* Larger tap targets */
+  a, button {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* ===== TABLET/DESKTOP STYLES ===== */
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles here */
+}
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
