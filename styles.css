@@ -13,7 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== NAVIGATION ===== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -31,30 +30,38 @@ nav {
   font-size: 1.5rem;
   font-weight: bold;
   color: #f90;
+  margin-right: auto; /* Pushes logo to the left */
+  padding-right: 1rem; /* Creates space between logo and nav items */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem; /* Reduced gap between buttons */
+  margin-right: 1.5rem; /* Space between nav items and toggle */
 }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
+/* ===== MOBILE MENU TOGGLE ===== */
+@media (max-width: 768px) {
+  .logo {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  .menu-toggle {
+    position: relative; /* Changed from absolute */
+    top: auto;
+    right: auto;
+    margin-left: 1.5rem; /* Space between nav items and toggle */
+  }
+  
+  .nav-links {
+    top: 60px; /* Adjusted for better spacing */
+    gap: 1.5rem; /* Reasonable gap for mobile */
+  }
+  
+  /* Keep all other mobile styles the same */
 }
-
-.nav-links li a:hover {
-  color: #f90;
-}
-
-.nav-links li a.active {
-  color: #f90;
-  font-weight: bold;
-}
-
 /* ===== SOCIAL ICONS ===== */
 .social-icons {
   display: flex;
@@ -72,7 +79,7 @@ nav {
   height: 35px;
   border-radius: 8px;
   object-fit: contain;
-  filter: invert(1);
+  filter: none; /* Removed invert filter to show original colors */
   opacity: 0.9;
 }
 
