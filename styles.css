@@ -56,7 +56,7 @@ nav {
   }
   
   .nav-links {
-    top: 60px; /* Adjusted for better spacing */
+    top: 20px; /* Adjusted for better spacing */
     gap: 1.5rem; /* Reasonable gap for mobile */
   }
   
@@ -65,7 +65,7 @@ nav {
 /* ===== SOCIAL ICONS ===== */
 .social-icons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   align-items: center;
 }
 
