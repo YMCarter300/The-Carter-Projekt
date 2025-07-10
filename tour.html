@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Carter Projekt</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
-  <!-- Add before </body> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
   <style>
      
     * {
@@ -23,7 +21,7 @@
       line-height: 1.6;
     }
 
-    nav {
+       nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,10 +31,11 @@
       width: 100%;
       top: 0;
       z-index: 1000;
+      transition: background 0.3s ease;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
     }
 
@@ -50,6 +49,7 @@
       color: white;
       text-decoration: none;
       transition: color 0.3s;
+      font-weight: 500;
     }
 
     .nav-links li a:hover {
@@ -58,7 +58,7 @@
 
     .social-icons img {
       width: 24px;
-      margin-left: 1rem;
+      margin-left: 15px;
     }
 
     .hero {
@@ -215,7 +215,7 @@
   }
   .social-icons {
     display: flex;
-    gap: 1.5rem; /* Space between icons */
+    gap: 0.9rem; /* Space between icons */
     align-items: center;
     justify-content: center;
     background: transparent; /* Ensures no background */
@@ -231,7 +231,6 @@
     height: 35px;
     border-radius: 8px;
     object-fit: contain; /* Prevents distortion */
-    filter: invert(1); /* Keeps white icons (adjust if needed) */
     opacity: 0.9; /* Slightly transparent */
   }
 
@@ -239,6 +238,7 @@
     transform: scale(1.1); /* Slight zoom on hover */
     opacity: 1; /* Full opacity on hover */
   }
+
   </style>
 <body>
 <head>
