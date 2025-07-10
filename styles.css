@@ -42,7 +42,7 @@ nav {
 }
 
 /* ===== MOBILE MENU TOGGLE ===== */
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .logo {
     margin-right: 1px;
     padding-right: 1px;
