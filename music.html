@@ -34,9 +34,30 @@
       transition: background 0.3s ease;
     }
 
-    .logo {
-      font-size: 1.3rem;
-      font-weight: bold;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+    }
+
+   .logo {
+      font-family: 'Courier New', monospace;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
+      background: linear-gradient(90deg, #f90, #ff0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0.2rem 0;
     }
 
     .nav-links {
@@ -239,11 +260,27 @@
     opacity: 1; /* Full opacity on hover */
   }
 
+  /* Right corner logo */
+  .right-logo {
+    height: 40px;
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
   </style>
-  <body>
-<head>
-    <nav>
-      <div class="logo">The Carter Projekt</div>
+</head>
+<body>
+  <nav>
+    <div class="logo-container">
+      <!-- Left corner logo space -->
+      <img src="logo-left.png" alt="Left Logo" class="logo-img">
+      <div class="logo">THE CARTER PROJEKT</div>
+    </div>
       
       <!-- Mobile menu toggle button -->
       <div class="menu-toggle">☰</div>
