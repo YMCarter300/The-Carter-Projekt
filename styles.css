@@ -333,8 +333,6 @@ body {
   text-size-adjust: 100%; /* Prevent font scaling on rotation */
 }
 
-
-
 /* Hamburger Menu */
 .menu-toggle {
   position: absolute;
@@ -490,48 +488,6 @@ form input[type="email"] {
             overflow-x: hidden;
         }
 
-        /* ===== NAVIGATION ===== */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background 0.3s ease;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f90;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links li a:hover {
-            color: #f90;
-        }
-
-        .nav-links li a.active {
-            color: #f90;
-            font-weight: bold;
-        }
-
         /* ===== SOCIAL ICONS ===== */
         .social-icons {
             display: flex;
@@ -560,7 +516,6 @@ form input[type="email"] {
 
         /* ===== HERO SECTIONS ===== */
         
-
         .hero-text {
             z-index: 10;
             padding: 0 2rem;
@@ -722,4 +677,5 @@ form input[type="email"] {
                 grid-template-columns: 1fr;
             }
         }
+
 
