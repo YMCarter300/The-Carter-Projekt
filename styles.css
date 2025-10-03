@@ -559,18 +559,7 @@ form input[type="email"] {
         }
 
         /* ===== HERO SECTIONS ===== */
-        .hero {
-            position: relative;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            margin-top: 70px;
-        }
+        
 
         .hero-text {
             z-index: 10;
@@ -733,3 +722,4 @@ form input[type="email"] {
                 grid-template-columns: 1fr;
             }
         }
+
