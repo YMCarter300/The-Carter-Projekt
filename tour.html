@@ -1,199 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Carter Projekt</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>The Carter Projekt | Tour</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-     
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #111;
-      color: #fff;
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
     }
 
-       nav {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap');
+
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
       padding: 1rem 2rem;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 153, 0, 0.2);
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo-img {
-      height: 60px;
+      height: 55px;
       width: auto;
+      border-radius: 10px;
+      transition: transform 0.2s;
     }
 
-   .logo {
-      font-family: 'Courier New', monospace;
-      font-size: 1.5rem;
-      font-weight: 900;
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
-      background: linear-gradient(90deg, #f90, #ff0);
+      background: linear-gradient(135deg, #f90, #ffdd88);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      padding: 0.2rem 0;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     .nav-links li a {
-      color: white;
+      color: #f0f0f0;
       text-decoration: none;
-      transition: color 0.3s;
       font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #f90;
+      transition: width 0.25s;
+    }
+
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after {
+      width: 100%;
     }
 
     .nav-links li a:hover {
       color: #f90;
     }
 
-    .social-icons img {
-      width: 24px;
-      margin-left: 15px;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
+    .social-icons {
       display: flex;
-      justify-content: center;
+      gap: 1.2rem;
       align-items: center;
-      text-align: center;
     }
 
-    #bg-video {
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a .fa-instagram {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-instagram {
+      color: #E4405F;
+    }
+    .social-icons a .fa-youtube {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-youtube {
+      color: #FF0000;
+    }
+    .social-icons a .fa-facebook-f {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-facebook-f {
+      color: #1877F2;
+    }
+    .social-icons a:hover {
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #f90;
+    }
+
+    .page-hero {
+      height: 50vh;
+      background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 70px;
+      position: relative;
+    }
+    .page-hero::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+      right: 0;
+      bottom: 0;
+      background: url('Weixin3.jpg') center/cover;
+      opacity: 0.3;
+      z-index: 0;
     }
-
-    .hero-text {
-      color: white;
-      z-index: 10;
+    .page-hero div {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #f90);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      color: #ccc;
+      font-size: 1.1rem;
     }
 
     .btn {
-      background-color: #f90;
-      color: black;
-      padding: 0.8rem 1.5rem;
+      background: linear-gradient(95deg, #f90, #ffb347);
+      color: #111;
+      padding: 0.9rem 2rem;
       border: none;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      border-radius: 40px;
       margin-top: 1rem;
       display: inline-block;
-      transition: background-color 0.3s;
+      transition: all 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
     }
-
     .btn:hover {
-      background-color: #ffa726;
+      transform: translateY(-3px);
+      filter: brightness(1.05);
     }
 
     .section {
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .section h2 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
-      border-bottom: 2px solid #f90;
-      display: inline-block;
+      border-left: 4px solid #f90;
+      padding-left: 1.2rem;
+      font-weight: 700;
     }
 
-    .music-embed iframe {
-      border-radius: 10px;
+    .tour-container {
+      background: rgba(255,255,255,0.03);
+      border-radius: 24px;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+
+    .tour-dates {
+      list-style: none;
     }
 
     .tour-dates li {
-      margin-bottom: 1rem;
-    }
-
-    .video-gallery iframe {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-      margin: 1rem;
-    }
-
-    .video-gallery {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255,153,0,0.15);
+      transition: background 0.3s;
     }
 
-   .photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.photo-gallery img {
-  width: 100%;
-  height: 500px; /* Fixed height */
-  object-fit: cover; /* This ensures the image covers the area while maintaining aspect ratio */
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.photo-gallery img:hover {
-  transform: scale(1.05);
-}
-
-    form input[type="email"] {
-      padding: 0.8rem;
-      width: 300px;
-      border: none;
-      border-radius: 5px;
-      margin-right: 1rem;
+    .tour-dates li:hover {
+      background: rgba(255,153,0,0.05);
     }
 
-    form button {
-      padding: 0.8rem 1.2rem;
-      background-color: #f90;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+    .tour-dates li:last-child {
+      border-bottom: none;
     }
 
-    form button:hover {
-      background-color: #ffa726;
+    .tour-date-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .tour-date {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f90;
+    }
+
+    .tour-location {
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .tour-btn {
+      background: transparent;
+      border: 1.5px solid #f90;
+      color: #f90;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .tour-btn:hover {
+      background: #f90;
+      color: #111;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -201,150 +288,159 @@
       padding: 2rem;
       text-align: center;
       color: #777;
+      border-top: 1px solid rgba(255,153,0,0.2);
+      margin-top: 2rem;
     }
-      .social-icons {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
-  .social-icons img {
-    transition: transform 0.3s ease;
-  }
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-  .video-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
 
-.video-gallery iframe {
-  aspect-ratio: 16/9;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-  .music-embed {
-    margin: 20px 0;
-    max-width: 660px;
-  }
-  
-  .section {
-    padding: 40px 20px;
-  }
-  .social-icons {
-    display: flex;
-    gap: 0.9rem; /* Space between icons */
-    align-items: center;
-    justify-content: center;
-    background: transparent; /* Ensures no background */
-  }
-
-  .social-icons a {
-    display: inline-block;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-
-  .social-icons img {
-    width: 35px; /* Increased size */
-    height: 35px;
-    border-radius: 8px;
-    object-fit: contain; /* Prevents distortion */
-    opacity: 0.9; /* Slightly transparent */
-  }
-
-  .social-icons a:hover img {
-    transform: scale(1.1); /* Slight zoom on hover */
-    opacity: 1; /* Full opacity on hover */
-  }
-
-  /* Right corner logo */
-  .right-logo {
-    height: 40px;
-    width: auto;
-    margin-left: 20px;
-  }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-  }
-
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(20px);
+        width: 70%;
+        height: calc(100vh - 75px);
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left 0.3s;
+        border-radius: 0 20px 20px 0;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .page-hero h1 {
+        font-size: 2.5rem;
+      }
+      .section h2 {
+        font-size: 2rem;
+      }
+      .tour-dates li {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.2rem;
+      }
+      .tour-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo-container">
-      <!-- Left corner logo space -->
-      <img src="Weixin Image_20260119132104_251_83.jpg" alt="Left Logo" class="logo-img">
-      <div class="logo">THE CARTER PROJEKT</div>
-    </div>
-      
-      <!-- Mobile menu toggle button -->
-      <div class="menu-toggle">☰</div>
-      
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="tour.html">Tour</a></li>
-        <li><a href="videos.html">Videos</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="newsletter.html">Newsletter</a></li>
-      </ul>
-      
-      <div class="social-icons">
-        <a href="https://www.instagram.com/thecarterprojekt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-          <img src="Weixin_instagram.jpg" alt="Instagram">
-        </a>
-        <a href="https://youtube.com/@gbanjah?si=Wu2LMWluWvomSDci">
-          <img src="Weixin_youtube.jpg" alt="YouTube">
-        </a>
-        <a href="https://www.facebook.com/carterprojekt">
-          <img src="Weixin_facebook.jpg" alt="Facebook">
-        </a>
-      </div>
-    </nav>
-  </head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#000000"> <!-- Android address bar color -->
-<meta name="mobile-web-app-capable" content="yes">
 
-<!-- Touch Icons -->
-<link rel="icon" sizes="192x192" href="/icon-android.png">
-<link rel="apple-touch-icon" href="/icon-ios.png">
+<nav>
+  <div class="logo-container">
+    <img src="Weixin Image_20260119132104_251_83.jpg" alt="Left Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=TCP'">
+    <div class="logo">THE CARTER PROJEKT</div>
+  </div>
+  <div class="menu-toggle" id="mobileMenuToggle">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="tour.html">Tour</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="newsletter.html">Newsletter</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/thecarterprojekt" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@gbanjah" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/carterprojekt" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</nav>
 
-  <section class="hero" style="background: url('Weixin3.jpg') center/cover;">
-    <div class="hero-text">
-      <h1>SHOW DATES 2025</h1>
-      <a href="#tour" class="btn">See Dates</a>
-    </div>
+<section class="page-hero">
+  <div>
+    <h1>SHOW DATES 2025</h1>
+    <p>Experience the energy live</p>
+    <a href="#tour" class="btn">See Dates</a>
+  </div>
+</section>
 
-  </section>
-
-  <section id="tour" class="section">
-    <h2>SHOW Dates</h2>
+<section id="tour" class="section">
+  <h2>Tour Dates</h2>
+  <div class="tour-container">
     <ul class="tour-dates">
-      <li><strong>Nov 7 – Munich, Germany</strong> – <a href="#">Buy Tickets</a></li>
-      <li><strong>Nov 14 – Cologne, Germany</strong> – <a href="#">Buy Tickets</a></li>
-      <li><strong>Nov 21 – Kiel, Germany</strong> – <a href="#">Buy Tickets</a></li>
-      <li><strong>Nov 28 – Hamburg, Germany</strong> – <a href="#">Buy Tickets</a></li>
+      <li>
+        <div class="tour-date-info">
+          <span class="tour-date">NOV 7, 2025</span>
+          <span class="tour-location">Munich, Germany</span>
+        </div>
+        <a href="#" class="tour-btn">Buy Tickets →</a>
+      </li>
+      <li>
+        <div class="tour-date-info">
+          <span class="tour-date">NOV 14, 2025</span>
+          <span class="tour-location">Cologne, Germany</span>
+        </div>
+        <a href="#" class="tour-btn">Buy Tickets →</a>
+      </li>
+      <li>
+        <div class="tour-date-info">
+          <span class="tour-date">NOV 21, 2025</span>
+          <span class="tour-location">Kiel, Germany</span>
+        </div>
+        <a href="#" class="tour-btn">Buy Tickets →</a>
+      </li>
+      <li>
+        <div class="tour-date-info">
+          <span class="tour-date">NOV 28, 2025</span>
+          <span class="tour-location">Hamburg, Germany</span>
+        </div>
+        <a href="#" class="tour-btn">Buy Tickets →</a>
+      </li>
     </ul>
-  </section>
- <footer>
-    <p>&copy; 2025 The Carter Projekt. All rights reserved.</p>
-  </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const nav = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        nav.style.background = window.scrollY > 50 ? "#000" : "rgba(0,0,0,0.85)";
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 The Carter Projekt. All rights reserved.</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
       });
     });
-  </script>
-  <script src="script.js"></script>
-  </body>
-</html>
+  }
 
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.background = '#000';
+      nav.style.backdropFilter = 'blur(12px)';
+    } else {
+      nav.style.background = 'rgba(0,0,0,0.85)';
+    }
+  });
+
+  // Set active nav link
+  const currentPage = window.location.pathname.split('/').pop() || 'tour.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (currentPage === linkPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>
