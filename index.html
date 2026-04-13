@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#000000" />
   <meta name="mobile-web-app-capable" content="yes" />
   <title>The Carter Projekt | Official Website</title>
-  <!-- Font Awesome 6 for original brand color icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -18,14 +17,13 @@
     body {
       background-color: #0a0a0a;
       color: #e5e5e5;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap');
 
-    /* ---- Navigation - Modern Glassmorphism ---- */
     nav {
       display: flex;
       justify-content: space-between;
@@ -59,7 +57,6 @@
     }
 
     .logo {
-      font-family: 'Inter', monospace;
       font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: 1px;
@@ -105,7 +102,6 @@
       color: #f90;
     }
 
-    /* Social Icons - Original Colors */
     .social-icons {
       display: flex;
       gap: 1.2rem;
@@ -121,39 +117,13 @@
       transition: transform 0.2s;
     }
 
-    /* Original brand colors */
-    .social-icons a .fa-instagram {
-      color: #ffffff;
-      transition: color 0.2s;
-    }
-    .social-icons a:hover .fa-instagram {
-      color: #E4405F;
-    }
-
-    .social-icons a .fa-youtube {
-      color: #ffffff;
-      transition: color 0.2s;
-    }
-    .social-icons a:hover .fa-youtube {
-      color: #FF0000;
-    }
-
-    .social-icons a .fa-facebook-f {
-      color: #ffffff;
-      transition: color 0.2s;
-    }
-    .social-icons a:hover .fa-facebook-f {
-      color: #1877F2;
-    }
-
-    .social-icons a:hover {
-      transform: translateY(-3px);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-    }
+    .social-icons a .fa-instagram { color: #ffffff; transition: color 0.2s; }
+    .social-icons a:hover .fa-instagram { color: #E4405F; }
+    .social-icons a .fa-youtube { color: #ffffff; transition: color 0.2s; }
+    .social-icons a:hover .fa-youtube { color: #FF0000; }
+    .social-icons a .fa-facebook-f { color: #ffffff; transition: color 0.2s; }
+    .social-icons a:hover .fa-facebook-f { color: #1877F2; }
+    .social-icons a:hover { transform: translateY(-3px); }
 
     .menu-toggle {
       display: none;
@@ -162,7 +132,6 @@
       color: #f90;
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       height: 100vh;
@@ -193,7 +162,6 @@
     .hero-text h1 {
       font-size: 4rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
       background: linear-gradient(135deg, #fff, #ffcc88);
       -webkit-background-clip: text;
       background-clip: text;
@@ -235,7 +203,6 @@
       filter: brightness(1.05);
     }
 
-    /* Sections */
     .section {
       padding: 5rem 2rem;
       max-width: 1200px;
@@ -315,9 +282,17 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.5);
     }
 
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
     form input[type="email"] {
       padding: 1rem;
-      width: 300px;
+      flex: 1;
+      min-width: 250px;
       border: none;
       border-radius: 60px;
       background: #222;
@@ -362,7 +337,6 @@
       opacity: 0.8;
     }
 
-    /* Volume control */
     .volume-control {
       position: fixed;
       bottom: 20px;
@@ -385,27 +359,15 @@
     #volumeControl {
       width: 100px;
       cursor: pointer;
-      height: 4px;
-      border-radius: 5px;
-      background: #f90;
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Mobile Responsive */
     @media (max-width: 900px) {
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
       .nav-links {
         position: fixed;
         top: 75px;
@@ -420,26 +382,11 @@
         transition: left 0.3s;
         border-radius: 0 20px 20px 0;
       }
-      .nav-links.active {
-        left: 0;
-      }
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-      .section h2 {
-        font-size: 2rem;
-      }
-      .photo-gallery img {
-        height: 280px;
-      }
-      form input[type="email"] {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 10px;
-      }
+      .nav-links.active { left: 0; }
+      .hero-text h1 { font-size: 2.5rem; }
+      .section h2 { font-size: 2rem; }
+      .photo-gallery img { height: 280px; }
+      .btn-outline { margin-left: 0; margin-top: 10px; }
     }
   </style>
 </head>
@@ -447,12 +394,10 @@
 
 <nav>
   <div class="logo-container">
-    <img src="Weixin Image_20260119132104_251_83.jpg" alt="Left Logo" class="logo-img">
+    <img src="Weixin Image_20260119132104_251_83.jpg" alt="Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=TCP'">
     <div class="logo">THE CARTER PROJEKT</div>
   </div>
-  
   <div class="menu-toggle" id="mobileMenuToggle">☰</div>
-  
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="music.html">Music</a></li>
@@ -463,18 +408,11 @@
     <li><a href="newsletter.html">Newsletter</a></li>
     <li><a href="support.html">Support</a></li>
   </ul>
-  
   <div class="nav-right">
     <div class="social-icons">
-      <a href="https://www.instagram.com/thecarterprojekt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://youtube.com/@gbanjah?si=Wu2LMWluWvomSDci" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.facebook.com/carterprojekt" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-      </a>
+      <a href="https://www.instagram.com/thecarterprojekt" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@gbanjah" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/carterprojekt" target="_blank"><i class="fab fa-facebook-f"></i></a>
     </div>
   </div>
 </nav>
@@ -492,40 +430,39 @@
   </div>
 </section>
 
-<!-- Preserving your original sections exactly as they were, just with modern styling -->
 <section class="section">
   <h2>Latest Music</h2>
   <div class="music-embed">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4gRw4uPeWz6GMF3FOTf3rG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4gRw4uPeWz6GMF3FOTf3rG?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </section>
 
 <section class="section">
   <h2>Tour Dates</h2>
   <ul class="tour-dates">
-    <li>May 15, 2025 - Berlin, DE @ Metropol</li>
-    <li>May 22, 2025 - Paris, FR @ Élysée Montmartre</li>
-    <li>June 05, 2025 - London, UK @ Electric Brixton</li>
-    <li>June 18, 2025 - New York, NY @ Brooklyn Steel</li>
+    <li><span>May 15, 2025 - Berlin, DE @ Metropol</span> <span style="color:#f90;">Tickets →</span></li>
+    <li><span>May 22, 2025 - Paris, FR @ Élysée Montmartre</span> <span style="color:#f90;">Tickets →</span></li>
+    <li><span>June 05, 2025 - London, UK @ Electric Brixton</span> <span style="color:#f90;">Tickets →</span></li>
+    <li><span>June 18, 2025 - New York, NY @ Brooklyn Steel</span> <span style="color:#f90;">Tickets →</span></li>
   </ul>
 </section>
 
 <section class="section">
   <h2>Official Videos</h2>
   <div class="video-gallery">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Official Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Live Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </section>
 
 <section class="section">
   <h2>Photo Gallery</h2>
   <div class="photo-gallery">
-    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&auto=format" alt="Live performance">
-    <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=600&auto=format" alt="Studio session">
-    <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600&auto=format" alt="Band portrait">
-    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&auto=format" alt="Crowd energy">
+    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600" alt="Live">
+    <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=600" alt="Studio">
+    <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600" alt="Band">
+    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600" alt="Crowd">
   </div>
 </section>
 
@@ -549,35 +486,23 @@
 
 <footer>
   <p>&copy; 2025 The Carter Projekt. All rights reserved.</p>
-  <img src="logo.png" alt="Right Logo" class="right-logo">
+  <img src="logo.png" alt="Logo" class="right-logo" onerror="this.style.display='none'">
 </footer>
 
 <script>
-  // Mobile menu toggle
   const menuToggle = document.getElementById('mobileMenuToggle');
   const navLinks = document.getElementById('navLinks');
-  
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    
-    // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
   }
 
-  // Background music control
   const bgAudio = document.getElementById('bgMusic');
   const playBtn = document.getElementById('playButton');
   const volumeSlider = document.getElementById('volumeControl');
   
   if (bgAudio) {
     bgAudio.volume = 0.3;
-    
     if (playBtn) {
       playBtn.addEventListener('click', () => {
         if (bgAudio.paused) {
@@ -589,19 +514,14 @@
         }
       });
     }
-    
     if (volumeSlider) {
-      volumeSlider.addEventListener('input', (e) => {
-        bgAudio.volume = parseFloat(e.target.value);
-      });
+      volumeSlider.addEventListener('input', (e) => bgAudio.volume = parseFloat(e.target.value));
     }
   }
 
-  // Newsletter form
   const form = document.getElementById('newsletterForm');
   const emailInput = document.getElementById('emailInput');
   const formMessage = document.getElementById('formMessage');
-  
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -609,24 +529,16 @@
       if (email && email.includes('@')) {
         formMessage.textContent = 'Thank you for subscribing! 🎵';
         emailInput.value = '';
-        setTimeout(() => {
-          formMessage.textContent = '';
-        }, 3000);
+        setTimeout(() => formMessage.textContent = '', 3000);
       } else {
         formMessage.textContent = 'Please enter a valid email address.';
       }
     });
   }
 
-  // Nav scroll effect
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.style.background = '#000';
-      nav.style.backdropFilter = 'blur(12px)';
-    } else {
-      nav.style.background = 'rgba(0,0,0,0.85)';
-    }
+    nav.style.background = window.scrollY > 50 ? '#000' : 'rgba(0,0,0,0.85)';
   });
 </script>
 </body>
