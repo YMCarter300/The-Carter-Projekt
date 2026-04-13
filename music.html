@@ -2,64 +2,324 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <meta name="theme-color" content="#000000" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <title>The Carter Projekt | Music</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #0a0a0a; color: #e5e5e5; font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap');
-    
-    nav { display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,153,0,0.2); }
-    .logo-container { display: flex; align-items: center; gap: 12px; }
-    .logo-img { height: 55px; width: auto; border-radius: 10px; }
-    .logo { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(135deg, #f90, #ffdd88); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .nav-links { list-style: none; display: flex; gap: 1.8rem; }
-    .nav-links li a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: color 0.2s; }
-    .nav-links li a:hover { color: #f90; }
-    .social-icons { display: flex; gap: 1.2rem; }
-    .social-icons a { font-size: 1.5rem; transition: transform 0.2s; }
-    .social-icons a .fa-instagram { color: #fff; }
-    .social-icons a:hover .fa-instagram { color: #E4405F; }
-    .social-icons a .fa-youtube { color: #fff; }
-    .social-icons a:hover .fa-youtube { color: #FF0000; }
-    .social-icons a .fa-facebook-f { color: #fff; }
-    .social-icons a:hover .fa-facebook-f { color: #1877F2; }
-    .social-icons a:hover { transform: translateY(-3px); }
-    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #f90; }
-    
-    .page-hero { height: 50vh; background: linear-gradient(135deg, #1a1a2e, #0a0a0a); display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 70px; }
-    .page-hero h1 { font-size: 4rem; background: linear-gradient(135deg, #fff, #f90); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    
-    .section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .section h2 { font-size: 2.5rem; margin-bottom: 2rem; border-left: 4px solid #f90; padding-left: 1.2rem; }
-    
-    .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .music-card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 1.5rem; transition: transform 0.3s; }
-    .music-card:hover { transform: translateY(-5px); }
-    .music-card iframe { width: 100%; border-radius: 12px; margin-bottom: 1rem; }
-    .music-card h3 { color: #f90; margin-bottom: 0.5rem; }
-    
-    footer { background: #000; padding: 2rem; text-align: center; color: #777; border-top: 1px solid rgba(255,153,0,0.2); }
-    
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 153, 0, 0.2);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      height: 55px;
+      width: auto;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #f90, #ffdd88);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-links li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #f90;
+      transition: width 0.25s;
+    }
+
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after {
+      width: 100%;
+    }
+
+    .nav-links li a:hover {
+      color: #f90;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a .fa-instagram {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-instagram {
+      color: #E4405F;
+    }
+    .social-icons a .fa-youtube {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-youtube {
+      color: #FF0000;
+    }
+    .social-icons a .fa-facebook-f {
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover .fa-facebook-f {
+      color: #1877F2;
+    }
+    .social-icons a:hover {
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #f90;
+    }
+
+    .page-hero {
+      height: 50vh;
+      background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 70px;
+      position: relative;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('DSC07645.jpg') center/cover;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    .page-hero div {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #f90);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      background: linear-gradient(95deg, #f90, #ffb347);
+      color: #111;
+      padding: 0.9rem 2rem;
+      border: none;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 40px;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: all 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #f90;
+      padding-left: 1.2rem;
+      font-weight: 700;
+    }
+
+    .music-container {
+      background: rgba(255,255,255,0.03);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .spotify-embed {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .spotify-embed iframe {
+      border-radius: 16px;
+    }
+
+    .streaming-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .stream-btn {
+      background: rgba(255,255,255,0.08);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stream-btn:hover {
+      background: #f90;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #000;
+      padding: 2rem;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid rgba(255,153,0,0.2);
+      margin-top: 2rem;
+    }
+
     @media (max-width: 900px) {
-      .menu-toggle { display: block; }
-      .nav-links { position: fixed; top: 75px; left: -100%; flex-direction: column; background: rgba(0,0,0,0.95); width: 70%; height: calc(100vh - 75px); padding: 2rem; gap: 1.5rem; transition: left 0.3s; border-radius: 0 20px 20px 0; }
-      .nav-links.active { left: 0; }
-      .page-hero h1 { font-size: 2.5rem; }
-      .section h2 { font-size: 2rem; }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(20px);
+        width: 70%;
+        height: calc(100vh - 75px);
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left 0.3s;
+        border-radius: 0 20px 20px 0;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .page-hero h1 {
+        font-size: 2.5rem;
+      }
+      .section h2 {
+        font-size: 2rem;
+      }
+      .music-container {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+
 <nav>
-  <div class="logo-container"><img src="Weixin Image_20260119132104_251_83.jpg" alt="Logo" class="logo-img"><div class="logo">THE CARTER PROJEKT</div></div>
+  <div class="logo-container">
+    <img src="Weixin Image_20260119132104_251_83.jpg" alt="Left Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=TCP'">
+    <div class="logo">THE CARTER PROJEKT</div>
+  </div>
   <div class="menu-toggle" id="mobileMenuToggle">☰</div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li><li><a href="music.html">Music</a></li><li><a href="tour.html">Tour</a></li>
-    <li><a href="videos.html">Videos</a></li><li><a href="photos.html">Photos</a></li><li><a href="store.html">Store</a></li>
-    <li><a href="newsletter.html">Newsletter</a></li><li><a href="support.html">Support</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="tour.html">Tour</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="newsletter.html">Newsletter</a></li>
+    <li><a href="support.html">Support</a></li>
   </ul>
   <div class="social-icons">
     <a href="https://www.instagram.com/thecarterprojekt" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -68,25 +328,75 @@
   </div>
 </nav>
 
-<section class="page-hero"><div><h1>MUSIC</h1><p style="margin-top:1rem;">Stream the latest releases</p></div></section>
-
-<section class="section">
-  <h2>Latest Releases</h2>
-  <div class="music-grid">
-    <div class="music-card"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4gRw4uPeWz6GMF3FOTf3rG?utm_source=generator" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><h3>Latest Album</h3><p>Out now on all platforms</p></div>
-    <div class="music-card"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1TIL8rMRhLvDbZJtKPXwKU?utm_source=generator" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><h3>Artist Profile</h3><p>Follow on Spotify</p></div>
+<section class="page-hero">
+  <div>
+    <h1>NOW STREAMING</h1>
+    <p>Listen to the latest releases on all platforms</p>
+    <a href="#music" class="btn">Listen Now</a>
   </div>
 </section>
 
-<footer><p>&copy; 2025 The Carter Projekt. All rights reserved.</p></footer>
+<section id="music" class="section">
+  <h2>Music</h2>
+  <div class="music-container">
+    <div class="spotify-embed" style="margin: 20px 0;">
+      <iframe style="border-radius:12px; width:100%; min-height:352px;" 
+              src="https://open.spotify.com/embed/artist/1TIL8rMRhLvDbZJtKPXwKU?utm_source=generator&theme=0" 
+              frameborder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"></iframe>
+    </div>
+    
+    <div class="streaming-links">
+      <a href="#" class="stream-btn"><i class="fab fa-spotify"></i> Spotify</a>
+      <a href="#" class="stream-btn"><i class="fab fa-apple"></i> Apple Music</a>
+      <a href="#" class="stream-btn"><i class="fab fa-amazon"></i> Amazon Music</a>
+      <a href="#" class="stream-btn"><i class="fab fa-youtube"></i> YouTube Music</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 The Carter Projekt. All rights reserved.</p>
+</footer>
 
 <script>
+  // Mobile menu toggle
   const menuToggle = document.getElementById('mobileMenuToggle');
   const navLinks = document.getElementById('navLinks');
+  
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
   }
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.background = '#000';
+      nav.style.backdropFilter = 'blur(12px)';
+    } else {
+      nav.style.background = 'rgba(0,0,0,0.85)';
+    }
+  });
+
+  // Set active nav link
+  const currentPage = window.location.pathname.split('/').pop() || 'music.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (currentPage === linkPage) {
+      link.classList.add('active');
+    }
+  });
 </script>
 </body>
 </html>
